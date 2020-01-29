@@ -1,0 +1,47 @@
+<h3>You Can Add Sports Here...</h3>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <input type="text" class="form-control" id="s_name" required formControlName="s_name" [(ngModel)]="sport.s_name"
+        name="s_name" placeholder="Sport Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="text" class="form-control" id="s_desc" required formControlName="s_desc" [(ngModel)]="sport.s_desc"
+        name="s_desc" placeholder="Description">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="text" class="form-control" id="s_type" required formControlName="s_type" [(ngModel)]="sport.s_type"
+        name="s_type" placeholder="Sport Type">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- <select class="form-control" id="s_type" required formControlName="s_type" [(ngModel)]="sport.s_type">
+        <option *ngFor="let t of types; let i = index" [value]="t">{{t}}</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+    <input type="submit" [disabled]="!myForm.valid" value="Add Sport">
+
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Sport's Name</th>
+        <th>Sport's Description</th>
+        <th>Sport's Type</th>
+        <th>Action</th>
+
+    </tr>
+    <tr *ngFor="let s of sports">
+        <td>{{s._id}}</td>
+        <td>{{s.s_name}}</td>
+        <td>{{s.s_desc}}</td>
+        <td>{{s.s_type}}</td>
+        <td>
+            <button (click)="editSport(s)">Edit</button>
+            <button (click)="viewSport(s)">View</button>
+            <button (click)="deleteSport(s)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+
+{{vsport.s_name}}
+{{vsport.s_desc}}
+{{vsport.s_type}}
+
+{{sports|json}}

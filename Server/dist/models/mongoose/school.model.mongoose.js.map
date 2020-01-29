@@ -1,0 +1,1 @@
+{"version":3,"file":"school.model.mongoose.js","sourceRoot":"","sources":["../../../models/mongoose/school.model.mongoose.ts"],"names":[],"mappings":";;AAAA,wCAAwC;AACxC,sEAA0D;AAM7C,QAAA,YAAY,GAAG,IAAI,4BAAQ,CAAC,MAAM,CAAU;IACrD,SAAS,EAAE,MAAM;IACjB,SAAS,EAAE,MAAM;CACpB,CAAC,CAAC;AACH,MAAM,MAAM,GAAG,4BAAQ,CAAC,KAAK,CAAU,QAAQ,EAAE,oBAAY,CAAC,CAAC;AAC/D,kBAAe,MAAM,CAAC"}

@@ -1,0 +1,68 @@
+<h3> Add Participants...</h3>
+<form [formGroup]="myPartForm" (ngSubmit)="onSubmit()">
+    <input type="text" class="form-control" id="p_name" required formControlName="p_name"
+        [(ngModel)]="participant.p_name" name="p_name"
+        placeholder="Participant's Full Name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="number" min=1 max=12 class="form-control" id="p_standard" required formControlName="p_standard"
+        [(ngModel)]="participant.p_standard" name="p_standard" placeholder="Std.">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- <select class="form-control" id="sportId" required formControlName="sportId" [(ngModel)]="participant.sportId">
+        <option *ngFor="let s of sports" [value]="s.id">{{s.s_name}}</option> -->
+    <select class="form-control" id="sportId" required formControlName="sportId" [(ngModel)]="participant.p_sportId">
+        <option *ngFor="let s of sports" [value]="s._id">{{s.s_name}}</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <!-- <select class="form-control" id="schoolId" required formControlName="schoolId" [(ngModel)]="participant.schoolId">
+        <option *ngFor="let schl of schools" [value]="schl.id">{{schl.schl_name}}</option> -->
+    <select class="form-control" id="schoolId" required formControlName="schoolId" [(ngModel)]="participant.p_schoolId">
+        <option *ngFor="let schl of schools" [value]="schl._id">{{schl.schl_name}}</option>
+    </select>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="submit" [disabled]="!myPartForm.valid" value="Add Participant">
+</form>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Participant's Name</th>
+        <th>Participant's Std.</th>
+        <th>Selected Sport</th>
+        <th>Participant's School</th>
+        <!-- <th>Created At</th>
+        <th>Updated At</th> -->
+        <th>Action</th>
+
+    </tr>
+    <tr *ngFor="let p of participants">
+        <!-- <td>{{p.id}}</td> -->
+        <td>{{p._id}}</td>
+        <td>{{p.p_name}}</td>
+        <td>{{p.p_standard}}</td>
+        <td>{{p.p_sportId[0].s_name}}</td>
+        <td>{{p.p_schoolId[0].schl_name}}</td>
+        <!-- <ng-container *ngFor="let s of sports">
+            <td *ngIf="s._id==p.p_sportId">{{ s.s_name }}</td>
+        </ng-container>
+        <ng-container *ngFor="let schl of schools">
+            <td *ngIf="schl._id==p.p_schoolId">{{ schl.schl_name }}</td>
+        </ng-container> -->
+        <!-- <td>{{p.createdAt}}</td>
+        <td>{{p.updatedAt}}</td> -->
+        <td>
+            <button (click)="editParticipant(p)">Edit</button>
+            <button (click)="viewParticipant(p)">View</button>
+            <button (click)="deleteParticipant(p)">Delete</button>
+        </td>
+    </tr>
+</table>
+
+
+{{vparticipant.p_name}}
+{{vparticipant.p_standard}}
+{{vparticipant.p_sportId}}
+{{vparticipant.p_schoolId}}
+<!-- {{vparticipant.sportId}}
+{{vparticipant.schoolId}} -->
+
+<!-- {{participants|json}} -->

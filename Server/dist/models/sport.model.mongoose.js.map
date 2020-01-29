@@ -1,0 +1,1 @@
+{"version":3,"file":"sport.model.mongoose.js","sourceRoot":"","sources":["../../models/sport.model.mongoose.ts"],"names":[],"mappings":";;AAAA,wCAAwC;AACxC,mEAAqD;AAQxC,QAAA,WAAW,GAAG,IAAI,4BAAQ,CAAC,MAAM,CAAC;IAC3C,MAAM,EAAE,MAAM;IACd,MAAM,EAAE,MAAM;IACd,MAAM,EAAE,MAAM;CACjB,CAAC,CAAC;AAEH,MAAM,MAAM,GAAG,4BAAQ,CAAC,KAAK,CAAS,QAAQ,EAAE,mBAAW,CAAC,CAAC;AAC7D,kBAAe,MAAM,CAAC"}
